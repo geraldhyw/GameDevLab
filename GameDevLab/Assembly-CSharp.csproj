@@ -36,12 +36,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/EnemyController.cs" />
-     <Compile Include="Assets/Scripts/PlayerController.cs" />
-     <Compile Include="Assets/Scripts/MenuController.cs" />
+     <Compile Include="Assets/Scripts/BreakBrick.cs" />
+     <Compile Include="Assets/Scripts/CameraController.cs" />
      <Compile Include="Assets/Scripts/QuestionBoxController.cs" />
      <Compile Include="Assets/Scripts/ConsumableMushroomController.cs" />
-     <Compile Include="Assets/Scripts/CameraController.cs" />
+     <Compile Include="Assets/Scripts/EnemyController.cs" />
+     <Compile Include="Assets/Scripts/Debris.cs" />
+     <Compile Include="Assets/Scripts/ParallaxScroller.cs" />
+     <Compile Include="Assets/Scripts/PlayerController.cs" />
+     <Compile Include="Assets/Scripts/MenuController.cs" />
+     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -672,15 +676,6 @@
     <Reference Include="mscorlib">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
@@ -690,14 +685,74 @@
     <Reference Include="Unity.2D.PixelPerfect">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
@@ -711,47 +766,29 @@
     <Reference Include="Unity.TextMeshPro">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
@@ -762,14 +799,14 @@
     <Reference Include="Unity.Mathematics">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -786,8 +823,8 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
@@ -795,8 +832,8 @@
     <Reference Include="Unity.2D.SpriteShape.Editor">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+        <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>/Users/gerald/Desktop/Gerald/School/Term 8/GameDev/GameDevLab/GameDevLab/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>

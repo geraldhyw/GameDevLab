@@ -39,13 +39,23 @@
      <Compile Include="Assets/Scripts/BreakBrick.cs" />
      <Compile Include="Assets/Scripts/CameraController.cs" />
      <Compile Include="Assets/Scripts/QuestionBoxController.cs" />
+     <Compile Include="Assets/Scripts/ObjectPooler.cs" />
+     <Compile Include="Assets/Scripts/CentralManager.cs" />
      <Compile Include="Assets/Scripts/ConsumableMushroomController.cs" />
      <Compile Include="Assets/Scripts/EnemyController.cs" />
      <Compile Include="Assets/Scripts/Debris.cs" />
+     <Compile Include="Assets/Scripts/GameConstants.cs" />
+     <Compile Include="Assets/Scripts/SpawnManager.cs" />
      <Compile Include="Assets/Scripts/ParallaxScroller.cs" />
      <Compile Include="Assets/Scripts/PlayerController.cs" />
      <Compile Include="Assets/Scripts/MenuController.cs" />
+     <Compile Include="Assets/Scripts/GameManager.cs" />
      <Compile Include="Assets/Scripts/PlayerMovement.cs" />
+     <Compile Include="Assets/Scripts/PowerupManager.cs" />
+     <Compile Include="Assets/Scripts/ConsumableInterface.cs" />
+     <Compile Include="Assets/Scripts/RedMushroom.cs" />
+     <Compile Include="Assets/Scripts/OrangeMushroom.cs" />
+     <Compile Include="Assets/Scripts/Coin.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

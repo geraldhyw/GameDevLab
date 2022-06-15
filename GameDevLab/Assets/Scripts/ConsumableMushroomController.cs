@@ -8,6 +8,7 @@ public class ConsumableMushroomController : MonoBehaviour
     private Vector2 velocity;
     private int moveRight = 1;
     public GameObject mushroomObject;
+    private bool collected = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,10 @@ public class ConsumableMushroomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveMushroom();
+        if (!collected)
+        {
+            moveMushroom();
+        }
     }
 
     void ComputeVelocity()
@@ -43,6 +47,7 @@ public class ConsumableMushroomController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Player"))
         {
+            collected = true;
             moveRight = 0;
             ComputeVelocity();
         };

@@ -38,4 +38,12 @@ public class GameConstants : ScriptableObject
 
     // for enemy rejoice
     public bool isRejoice = false;
+
+    // Mario basic starting values
+    public int playerMaxSpeed = 5;
+    public int playerMaxJumpSpeed = 30;
+    public int playerDefaultForce = 150;
+
+    // ground
+    public float groundDistance = 1.0f;
 }
